@@ -18,11 +18,6 @@
         style="opacity: 0; pointer-events: none;">
     </div>
 
-    <select id="language-selector">
-        <option value="en">English</option>
-        <option value="fr">French</option>
-      </select>
-
     <main
         class="text-white m-auto p-2 grid gap-2 max-w-6xl overflow-hidden relative w-full sm:p-4 sm:gap-2 md:grid-cols-2 md:gap-3 md:p-6 lg:h-screen lg:grid-cols-4 lg:gap-4 lg:max-h-[800px]">
         <div class="card group overflow-hidden opacity-0 bg-darkslate-500 shadow-lg rounded-lg p-6 border border-darkslate-100 hover:border-primary-500 align-start flex-none h-full justify-start relative transform perspective-1200 w-full transition duration-75 ease-in-out col-span-1 md:col-span-3 md:row-span-2"
@@ -32,9 +27,9 @@
             <div class="flex w-full h-full">
                 <div class="flex flex-col justify-between md:max-h-[300px] gap-4">
                     <div class="flex flex-col h-full">
-                        <h6 class="text-sm font-light m-0 text-gray-500">Welcome</h6>
-                        <p class="m-0 font-light text-xl">
-                            Hi, I'm Jourdan Totonde, a fullstack
+                        <h6 class="text-sm font-light m-0 text-gray-500" translate="yes">Welcome</h6>
+                        <p class="m-0 font-light text-xl" translate="yes">
+                            Hi, I'm <b class="font-bold" translate="yes">Jourdan Totonde, a fullstack
                             developer with strong focus on the backend development.
                         </p>
                     </div>
@@ -80,7 +75,7 @@
             <h2 class="text-xl font-bold m-0">About me</h2>
 
             <div class="flex flex-col gap-2">
-                <p class="text-sm font-light">
+                <p class="text-sm font-light" translate="yes">
                     Hi, I'm Jourdan, a fullstack developer from Benin.
                     <br>
                     My primary tools of choice includes:
@@ -91,12 +86,12 @@
                     <li role="link">Symphony</li>
                 </ul>
 
-                <p class="text-sm font-light">
+                <p class="text-sm font-light" translate="yes">
                     Beyond coding, I'm passionate about drawing, and traveling.
                     An usual hobby of mine is listening music, they're
                     interesting pieces of history to me.
                 </p>
-                <p class="text-sm font-light">
+                <p class="text-sm font-light" translate="yes">
                     While I have some preferred tools, I always choose the best suits the
                     job, even if it's not on my list. The goal is to find the right
                     solution for each project.
@@ -112,17 +107,17 @@
 
             <div class="h-full">
                 <header class="flex items-center">
-                    <h1 class="text-white text-xl font-bold">
+                    <h1 class="text-white text-xl font-bold" translate="yes">
                         Let's start working together!
                     </h1>
                 </header>
                 <address class="flex flex-col mt-4">
-                    <h4 class="text-gray-500">Contact Details</h4>
+                    <h4 class="text-gray-500" translate="yes">Contact Details</h4>
                     <p>totondejourdain@gmail.com</p>
                     <p>Benin</p>
                 </address>
                 <div class="flex flex-col mt-4 w-fit">
-                    <h4 class="text-gray-500">Socials</h4>
+                    <h4 class="text-gray-500" translate="yes">Socials</h4>
                     <ul>
                         <li>
                             <a href="https://www.linkedin.com/in/jourdan-totonde-9930b4252/"
@@ -145,7 +140,7 @@
 
         <div class="card group overflow-hidden opacity-0 bg-darkslate-500 shadow-lg rounded-lg p-6 border border-darkslate-100 hover:border-primary-500 align-start flex-none h-full justify-start relative transform perspective-1200 w-full transition duration-75 ease-in-out col-span-1 lg:col-span-2 md:row-span-1"
             style="transform: translateY(var(--motion-translateY)); --motion-translateY: 0%; opacity: 1;">
-            <h2 class="text-xl font-bold m-0">My works</h2>
+            <h2 class="text-xl font-bold m-0" translate="yes">My works</h2>
 
             <h4 id="timeDisplay"
                 class="text-5xl w-full h-[calc(100%-28px)] font-serif flex justify-center items-center">Coming soon 😉
@@ -160,9 +155,9 @@
 
             <div class="flex justify-between w-full items-start mb-2">
                 <div class="flex flex-col">
-                    <h2>Now</h2>
+                    <h2 translate="yes">Now</h2>
                     <a href="https://sive.rs/nowff" target="_blank">
-                        <h6 class="text-xs text-gray-500 cursor-pointer">what's that ?</h6>
+                        <h6 class="text-xs text-gray-500 cursor-pointer" translate="yes">what's that ?</h6>
                     </a>
                 </div>
                 <span class="relative flex h-3 w-3">
@@ -171,7 +166,7 @@
                     <span class="relative inline-flex rounded-full h-3 w-3 bg-green-500"></span>
                 </span>
             </div>
-            <p class="text-xs">Currently in second year of bachelor's degree in software engineering</p>
+            <p class="text-xs" translate="yes">Currently in second year of bachelor's degree in software engineering</p>
 
 
 
@@ -180,7 +175,7 @@
             style="transform: translateY(var(--motion-translateY)); --motion-translateY: 0%; opacity: 1;">
 
 
-            <p class="text-xs">
+            <p class="text-xs" translate="yes">
                 © 2023 · Crafted with ♥️ by <a href="https://jourdev.vercel.app" target="_blank"
                     class="text-red-500">me</a>
             </p>
@@ -189,37 +184,6 @@
 
         </div>
     </main>
-    <script>
-        // Function to translate content using Google Translate API
-        function translateContent(targetLang) {
-            const elementsToTranslate = document.querySelectorAll('h1, h2, h4, h6, p, b, li');
-            elementsToTranslate.forEach(element => {
-                const text = element.textContent;
-                const sourceLang = 'en'; // Source language is English
-                const url = `https://translate.googleapis.com/translate_a/single?client=gtx&sl=${sourceLang}&tl=${targetLang}&dt=t&q=${encodeURI(text)}`;
-                fetch(url)
-                    .then(response => response.json())
-                    .then(data => {
-                        const translatedText = data[0][0][0];
-                        element.textContent = translatedText;
-                    })
-                    .catch(error => {
-                        console.error('Translation error: ', error);
-                    });
-            });
-        }
-
-        // Handle language selection change
-        document.getElementById('language-selector').addEventListener('change', function () {
-            const selectedLang = this.value;
-            translateContent(selectedLang);
-        });
-    </script>
-
-
-
-
-
 </body>
 
 </html>
