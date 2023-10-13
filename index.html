@@ -7,6 +7,7 @@
     <title>Jourdan Totonde - Fullstack developer</title>
     <link rel="stylesheet" href="assets/main.css">
     <link rel="icon" href="assets/favicon.ico" type="image/x-icon">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
 
 
 
@@ -149,7 +150,7 @@
 
         </div>
         <div class="card group overflow-hidden opacity-0 bg-darkslate-500 shadow-lg rounded-lg p-6 border border-darkslate-100 hover:border-primary-500 align-start flex-none h-full justify-start relative transform perspective-1200 w-full transition duration-75 ease-in-out col-span-1 lg:col-span-2 md:row-span-1"
-        style="transform: translateY(var(--motion-translateY)); --motion-translateY: 0%; opacity: 1;">
+            style="transform: translateY(var(--motion-translateY)); --motion-translateY: 0%; opacity: 1;">
 
 
             <div class="flex justify-between w-full items-start mb-2">
@@ -183,6 +184,37 @@
 
         </div>
     </main>
+    <script>
+        // Function to translate content using Google Translate API
+        function translateContent(targetLang) {
+            const elementsToTranslate = document.querySelectorAll('h1, p, li');
+            elementsToTranslate.forEach(element => {
+                const text = element.textContent;
+                const sourceLang = 'en'; // Source language is English
+                const url = `https://translate.googleapis.com/translate_a/single?client=gtx&sl=${sourceLang}&tl=${targetLang}&dt=t&q=${encodeURI(text)}`;
+                fetch(url)
+                    .then(response => response.json())
+                    .then(data => {
+                        const translatedText = data[0][0][0];
+                        element.textContent = translatedText;
+                    })
+                    .catch(error => {
+                        console.error('Translation error: ', error);
+                    });
+            });
+        }
+
+        // Handle language selection change
+        document.getElementById('language-selector').addEventListener('change', function () {
+            const selectedLang = this.value;
+            translateContent(selectedLang);
+        });
+    </script>
+
+
+
+
+
 </body>
 
 </html>
