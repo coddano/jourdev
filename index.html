@@ -18,6 +18,11 @@
         style="opacity: 0; pointer-events: none;">
     </div>
 
+    <select id="language-selector">
+        <option value="en">English</option>
+        <option value="fr">French</option>
+      </select>
+
     <main
         class="text-white m-auto p-2 grid gap-2 max-w-6xl overflow-hidden relative w-full sm:p-4 sm:gap-2 md:grid-cols-2 md:gap-3 md:p-6 lg:h-screen lg:grid-cols-4 lg:gap-4 lg:max-h-[800px]">
         <div class="card group overflow-hidden opacity-0 bg-darkslate-500 shadow-lg rounded-lg p-6 border border-darkslate-100 hover:border-primary-500 align-start flex-none h-full justify-start relative transform perspective-1200 w-full transition duration-75 ease-in-out col-span-1 md:col-span-3 md:row-span-2"
@@ -187,7 +192,7 @@
     <script>
         // Function to translate content using Google Translate API
         function translateContent(targetLang) {
-            const elementsToTranslate = document.querySelectorAll('h1, p, li');
+            const elementsToTranslate = document.querySelectorAll('h1, h2, h4, h6, p, li');
             elementsToTranslate.forEach(element => {
                 const text = element.textContent;
                 const sourceLang = 'en'; // Source language is English
