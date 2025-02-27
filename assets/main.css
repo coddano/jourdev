@@ -659,3 +659,151 @@ video {
         max-width: 100%; /* Ajuste la largeur de l'image à la largeur de la carte */
         height: auto; /* Garantit que l'image conserve son ratio hauteur/largeur */
     }
+
+    /* Animations améliorées */
+.card {
+    transition: transform 0.3s ease, opacity 0.3s ease, border-color 0.2s ease;
+    box-shadow: 2px 2px 10px rgba(0, 0, 0, 0.2);
+}
+
+.card:hover {
+    transform: translateY(-5px);
+}
+
+/* Animation des boutons */
+.custom-btn {
+    position: relative;
+    overflow: hidden;
+}
+
+.custom-btn::after {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(230, 57, 70, 0.1);
+    transform: translateX(-100%);
+    transition: transform 0.3s ease;
+}
+
+.custom-btn:hover::after {
+    transform: translateX(0);
+}
+
+.hover-animation {
+    animation: btnPulse 0.6s ease;
+}
+
+@keyframes btnPulse {
+    0% { transform: scale(1); }
+    50% { transform: scale(1.05); }
+    100% { transform: scale(1); }
+}
+
+/* Style pour les badges de compétences */
+.skill-badge {
+    display: inline-block;
+    padding: 4px 8px;
+    border-radius: 4px;
+    background-color: rgba(230, 57, 70, 0.15);
+    border: 1px solid rgba(230, 57, 70, 0.3);
+    font-size: 0.75rem;
+    margin-right: 4px;
+    margin-bottom: 4px;
+    transition: all 0.2s ease;
+}
+
+.skill-badge:hover {
+    background-color: rgba(230, 57, 70, 0.25);
+    transform: translateY(-2px);
+}
+
+/* Style pour les projets */
+.project-card {
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+.project-card:hover {
+    background-color: rgba(35, 35, 35, 1);
+}
+
+/* Support du mode clair */
+body.light-mode {
+    background-color: #f5f5f5;
+    color: #333;
+}
+
+body.light-mode .card {
+    background-color: #ffffff;
+    border-color: #e0e0e0;
+}
+
+body.light-mode .bg-darkslate-500,
+body.light-mode .bg-gray-900 {
+    background-color: #f0f0f0;
+}
+
+body.light-mode .text-gray-200,
+body.light-mode .text-white {
+    color: #333;
+}
+
+/* Ajout d'un style pour les scrollbars */
+::-webkit-scrollbar {
+    width: 8px;
+    height: 8px;
+}
+
+::-webkit-scrollbar-track {
+    background: rgba(0, 0, 0, 0.1);
+    border-radius: 10px;
+}
+
+::-webkit-scrollbar-thumb {
+    background: rgba(230, 57, 70, 0.5);
+    border-radius: 10px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+    background: rgba(230, 57, 70, 0.7);
+}
+
+/* Ajout d'un effet de soulignement au survol des liens */
+a:not(.custom-btn) {
+    position: relative;
+    text-decoration: none;
+    transition: color 0.3s ease;
+}
+
+a:not(.custom-btn)::after {
+    content: '';
+    position: absolute;
+    width: 0;
+    height: 1px;
+    bottom: -2px;
+    left: 0;
+    background-color: rgba(230, 57, 70, 1);
+    transition: width 0.3s ease;
+}
+
+a:not(.custom-btn):hover::after {
+    width: 100%;
+}
+
+/* Amélioration de l'affichage mobile */
+@media (max-width: 640px) {
+    .card {
+        padding: 1rem;
+    }
+    
+    .custom-btn {
+        padding: 0.5rem 0.75rem;
+    }
+    
+    h1, h2 {
+        font-size: 1.25rem !important;
+    }
+}
